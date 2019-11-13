@@ -13,7 +13,7 @@
         <div>
           <span class="tag is-primary is-light">{{ .Params.Time }}</span>
           {{ range .Params.Tags }}
-            <span class="tag">{{ . }}</span>
+            <a class="tag" href="/tags/{{ . }}">{{ . }}</a>
           {{ end }}
         </div>
       </header>

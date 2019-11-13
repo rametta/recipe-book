@@ -1,1 +1,30 @@
-list
+{{ define "main" }}
+  <section class="section">
+    <div class="container">
+      {{ $lastUrlElement := index (last 1 (split (delimit (split .URL "/") "," "") ",")) 0 }}
+      <div class="columns is-centered">
+        <div class="column is-half">
+          <h3 class="title">{{ humanize $lastUrlElement }}</h3>
+        </div>
+      </div>
+      {{ range .Site.RegularPages }}
+        {{ if in .Params.tags $lastUrlElement }}
+        <div class="columns is-centered">
+          <div class="column is-half">
+            <a class="box" href="{{ .Permalink }}">
+              <div>{{ .Title }}</div>
+              <small class="has-text-grey">{{ .Summary }}</small>
+              <div style="margin-top: 0.5em;">
+                <span class="tag is-primary is-light">{{ .Params.Time }}</span>
+                {{ range .Params.Tags }}
+                  <span class="tag">{{ . }}</span>
+                {{ end }}
+              </div>
+            </a>
+          </div>
+        </div>
+        {{ end }}
+      {{ end }}
+    </div>
+  </section>
+{{ end }}
