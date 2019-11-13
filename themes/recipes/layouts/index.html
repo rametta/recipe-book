@@ -1,0 +1,21 @@
+{{ define "main" }}
+  <section class="section">
+    <div class="container">
+      {{ range .Site.RegularPages }}
+        <div class="columns is-centered">
+          <div class="column is-half">
+            <a class="box" href="{{ .Permalink }}">
+              <div>{{ .Title }}</div>
+              <small class="has-text-grey">{{ .Params.Time }} - {{ .Summary }}</small>
+              <div style="margin-top: 0.5em;">
+                {{ range .Params.Tags }}
+                  <span class="tag">{{ . }}</span>
+                {{ end }}
+              </div>
+            </a>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

@@ -1,0 +1,25 @@
+{{ define "main" }}
+  <div class="section">
+    <article class="container">
+      <header>
+        <h1 class="title is-1">
+          {{ .Title }}
+        </h1>
+        <h6 class="subtitle">
+          <time class="time" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+            {{- .Date.Format "January 2, 2006" -}}
+          </time>
+        </h6>
+        <div>
+          <span class="tag is-primary is-light">{{ .Params.Time }}</span>
+          {{ range .Params.Tags }}
+            <span class="tag">{{ . }}</span>
+          {{ end }}
+        </div>
+      </header>
+      <div class="content" style="margin-top: 1em;">
+        {{ .Content }}
+      </div>
+    </article>
+  </div>
+{{ end }}

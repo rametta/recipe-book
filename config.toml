@@ -1,0 +1,8 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Recipe Book"
+theme = "recipes"
+
+[params]
+  author = "Jason Rametta"
+  description = "Jason's Recipes"
