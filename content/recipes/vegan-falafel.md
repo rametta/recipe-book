@@ -6,6 +6,7 @@ date: 2019-11-14T08:11:45-05:00
 draft: false
 time: "45m"
 tags: ["vegan", "falafel"]
+featured_image: "/falafel.jpg"
 ---
 
 ## Ingredients
