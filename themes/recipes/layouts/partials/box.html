@@ -1,0 +1,19 @@
+<a class="box" href="{{ .Permalink }}" aria-label="{{ .Title }}">
+  <div class="is-flex">
+    {{ with .Params.featured_image }}
+      <figure class="image is-48x48" style="margin-right: 0.5em;">
+        <img alt="{{ . }}" class="is-rounded" src="{{ . }}" />
+      </figure>
+    {{ end }}
+    <div>
+      <div>{{ .Title }}</div>
+      <small class="has-text-grey">{{ .Summary }}</small>
+    </div>
+  </div>
+  <div style="margin-top: 0.5em;">
+    <span class="tag is-primary is-light">{{ .Params.Time }}</span>
+    {{ range .Params.Tags }}
+      <span class="tag">{{ . }}</span>
+    {{ end }}
+  </div>
+</a>

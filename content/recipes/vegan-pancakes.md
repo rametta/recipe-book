@@ -6,6 +6,7 @@ date: 2019-11-13T08:11:45-05:00
 draft: false
 time: "15m"
 tags: ["vegan", "pancakes"]
+featured_image: "/vegan-pancakes.png"
 ---
 
 ## Ingredients

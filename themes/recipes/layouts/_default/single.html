@@ -2,15 +2,22 @@
   <div class="section">
     <article class="container">
       <header>
-        <h1 class="title is-1">
-          {{ .Title }}
-        </h1>
-        <h6 class="subtitle">
-          <time class="time" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
-            {{- .Date.Format "January 2, 2006" -}}
-          </time>
-        </h6>
-        <div>
+        <div class="is-flex">
+          {{ with .Params.featured_image }}
+            <figure class="image is-96x96" style="margin-right: 0.5em;">
+              <img alt="{{ . }}" class="is-rounded" src="{{ . }}" />
+            </figure>
+          {{ end }}
+          <div>
+            <h1 class="title is-1">
+              {{ .Title }}
+            </h1>
+            <h6 class="subtitle is-6">
+              {{ .Summary }}
+            </h6>
+          </div>
+        </div>
+        <div style="margin-top: 1em;">
           <span class="tag is-primary is-light">{{ .Params.Time }}</span>
           {{ range .Params.Tags }}
             <a class="tag" href="/tags/{{ . }}">{{ . }}</a>
