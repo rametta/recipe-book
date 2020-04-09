@@ -1,21 +1,14 @@
-{{ define "main" }}
-  <section class="section">
-    <div class="container">
-      {{ $lastUrlElement := index (last 1 (split (delimit (split .URL "/") "," "") ",")) 0 }}
-      <div class="columns is-centered">
-        <div class="column is-half">
-          <h3 class="title">{{ humanize $lastUrlElement }}</h3>
-        </div>
-      </div>
-      {{ range .Site.RegularPages }}
-        {{ if in .Params.tags $lastUrlElement }}
-        <div class="columns is-centered">
-          <div class="column is-half">
-            {{ partial "box.html" . }}
-          </div>
-        </div>
+{{ define "main" }}.
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <h3 class="title">{{ humanize .Page.Title }}</h3>
+        {{ range .Pages }}
+        {{ partial "box.html" . }}
         {{ end }}
-      {{ end }}
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 {{ end }}
