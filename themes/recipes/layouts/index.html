@@ -2,14 +2,34 @@
 <section class="section">
   <div class="container">
     <div class="columns is-centered">
-      <div class="column is-half">
+      <div class="column">
         <div style="margin-bottom: 1em;">
           {{ range .Site.Taxonomies.tags }}
           <a class="tag" href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
           {{ end }}
         </div>
-        {{ range .Site.RegularPages }}
-        {{ partial "box.html" . }}
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column">
+        {{ range $index, $page := .Site.RegularPages }}
+          {{ if eq (mod $index 4) 0 }}{{ partial "box.html" $page }}{{ end }}
+        {{ end }}
+      </div>
+      <div class="column">
+        {{ range $index, $page := .Site.RegularPages }}
+          {{ if eq (mod $index 4) 1 }}{{ partial "box.html" $page }}{{ end }}
+        {{ end }}
+      </div>
+      <div class="column">
+        {{ range $index, $page := .Site.RegularPages }}
+          {{ if eq (mod $index 4) 2 }}{{ partial "box.html" $page }}{{ end }}
+        {{ end }}
+      </div>
+      <div class="column">
+        {{ range $index, $page := .Site.RegularPages }}
+          {{ if eq (mod $index 4) 3 }}{{ partial "box.html" $page }}{{ end }}
         {{ end }}
       </div>
     </div>
