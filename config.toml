@@ -1,8 +1,8 @@
-baseURL = "https://recipesbook.netlify.com/"
+baseURL = "https://recipes.kaylum.io"
 languageCode = "en-us"
-title = "Jason's Recipe Book"
+title = "Calem's Recipe Book"
 theme = "recipes"
 
 [params]
   author = "Jason Rametta"
-  description = "Jason's Recipe Book"
+  description = "Calem's Recipe Book"
